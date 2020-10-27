@@ -1,0 +1,14 @@
+setup.py
+bca_crawl/__init__.py
+bca_crawl/items.py
+bca_crawl/middlewares.py
+bca_crawl/pipelines.py
+bca_crawl/settings.py
+bca_crawl/spiders/__init__.py
+bca_crawl/spiders/bcacrawl.py
+bca_crawl/spiders/bnicrawl.py
+project.egg-info/PKG-INFO
+project.egg-info/SOURCES.txt
+project.egg-info/dependency_links.txt
+project.egg-info/entry_points.txt
+project.egg-info/top_level.txt

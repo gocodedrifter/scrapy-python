@@ -1,0 +1,124 @@
+2020-07-10 15:00:09 [scrapy.utils.log] INFO: Scrapy 2.2.0 started (bot: bca_crawl)
+2020-07-10 15:00:09 [scrapy.utils.log] INFO: Versions: lxml 4.5.1.0, libxml2 2.9.10, cssselect 1.1.0, parsel 1.6.0, w3lib 1.22.0, Twisted 20.3.0, Python 3.8.3 (default, Jul  7 2020, 13:01:48) - [Clang 11.0.0 (clang-1100.0.33.17)], pyOpenSSL 19.1.0 (OpenSSL 1.1.1g  21 Apr 2020), cryptography 2.9.2, Platform macOS-10.14.4-x86_64-i386-64bit
+2020-07-10 15:00:09 [scrapy.utils.log] DEBUG: Using reactor: twisted.internet.selectreactor.SelectReactor
+2020-07-10 15:00:09 [scrapy.crawler] INFO: Overridden settings:
+{'BOT_NAME': 'bca_crawl',
+ 'LOG_FILE': 'logs/bca_crawl/bca-crawl/5e1b6396c28311ea94dcf218982541a9.log',
+ 'NEWSPIDER_MODULE': 'bca_crawl.spiders',
+ 'SPIDER_MODULES': ['bca_crawl.spiders']}
+2020-07-10 15:00:09 [scrapy.extensions.telnet] INFO: Telnet Password: c955d96079995014
+2020-07-10 15:00:09 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.logstats.LogStats']
+2020-07-10 15:00:09 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2020-07-10 15:00:09 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2020-07-10 15:00:09 [scrapy.middleware] INFO: Enabled item pipelines:
+[]
+2020-07-10 15:00:09 [scrapy.core.engine] INFO: Spider opened
+2020-07-10 15:00:09 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2020-07-10 15:00:09 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6023
+2020-07-10 15:00:10 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://127.0.0.1:62218/session {"capabilities": {"firstMatch": [{}], "alwaysMatch": {"browserName": "chrome", "platformName": "any", "goog:chromeOptions": {"extensions": [], "args": []}}}, "desiredCapabilities": {"browserName": "chrome", "version": "", "platform": "ANY", "goog:chromeOptions": {"extensions": [], "args": []}}}
+2020-07-10 15:00:10 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 127.0.0.1:62218
+2020-07-10 15:00:12 [urllib3.connectionpool] DEBUG: http://127.0.0.1:62218 "POST /session HTTP/1.1" 200 727
+2020-07-10 15:00:12 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2020-07-10 15:00:12 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://127.0.0.1:62218/session/6e43fd46911f74b4d2354cc99e6bfa8c/url {"url": "https://ibank.klikbca.com/authentication.do"}
+2020-07-10 15:00:15 [urllib3.connectionpool] DEBUG: http://127.0.0.1:62218 "POST /session/6e43fd46911f74b4d2354cc99e6bfa8c/url HTTP/1.1" 200 14
+2020-07-10 15:00:15 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2020-07-10 15:00:15 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://127.0.0.1:62218/session/6e43fd46911f74b4d2354cc99e6bfa8c/element {"using": "css selector", "value": "[id=\"user_id\"]"}
+2020-07-10 15:00:15 [urllib3.connectionpool] DEBUG: http://127.0.0.1:62218 "POST /session/6e43fd46911f74b4d2354cc99e6bfa8c/element HTTP/1.1" 200 88
+2020-07-10 15:00:15 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2020-07-10 15:00:15 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://127.0.0.1:62218/session/6e43fd46911f74b4d2354cc99e6bfa8c/element {"using": "css selector", "value": "[id=\"pswd\"]"}
+2020-07-10 15:00:15 [urllib3.connectionpool] DEBUG: http://127.0.0.1:62218 "POST /session/6e43fd46911f74b4d2354cc99e6bfa8c/element HTTP/1.1" 200 88
+2020-07-10 15:00:15 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2020-07-10 15:00:15 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://127.0.0.1:62218/session/6e43fd46911f74b4d2354cc99e6bfa8c/element {"using": "xpath", "value": "//input[@value=\"LOGIN\"]"}
+2020-07-10 15:00:15 [urllib3.connectionpool] DEBUG: http://127.0.0.1:62218 "POST /session/6e43fd46911f74b4d2354cc99e6bfa8c/element HTTP/1.1" 200 88
+2020-07-10 15:00:15 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2020-07-10 15:00:15 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://127.0.0.1:62218/session/6e43fd46911f74b4d2354cc99e6bfa8c/element/905ddce3-cc6d-498a-9b59-b5ba103782b8/value {"text": "ABIANTON7317", "value": ["A", "B", "I", "A", "N", "T", "O", "N", "7", "3", "1", "7"], "id": "905ddce3-cc6d-498a-9b59-b5ba103782b8"}
+2020-07-10 15:00:15 [urllib3.connectionpool] DEBUG: http://127.0.0.1:62218 "POST /session/6e43fd46911f74b4d2354cc99e6bfa8c/element/905ddce3-cc6d-498a-9b59-b5ba103782b8/value HTTP/1.1" 200 14
+2020-07-10 15:00:15 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2020-07-10 15:00:20 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://127.0.0.1:62218/session/6e43fd46911f74b4d2354cc99e6bfa8c/element/cecaf640-81b3-4ebf-8beb-087848f3d580/value {"text": "778899", "value": ["7", "7", "8", "8", "9", "9"], "id": "cecaf640-81b3-4ebf-8beb-087848f3d580"}
+2020-07-10 15:00:20 [urllib3.connectionpool] DEBUG: http://127.0.0.1:62218 "POST /session/6e43fd46911f74b4d2354cc99e6bfa8c/element/cecaf640-81b3-4ebf-8beb-087848f3d580/value HTTP/1.1" 200 14
+2020-07-10 15:00:20 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2020-07-10 15:00:25 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://127.0.0.1:62218/session/6e43fd46911f74b4d2354cc99e6bfa8c/element/d7013057-a502-4d8c-9ce8-81ff9d63d55b/click {"id": "d7013057-a502-4d8c-9ce8-81ff9d63d55b"}
+2020-07-10 15:00:26 [urllib3.connectionpool] DEBUG: http://127.0.0.1:62218 "POST /session/6e43fd46911f74b4d2354cc99e6bfa8c/element/d7013057-a502-4d8c-9ce8-81ff9d63d55b/click HTTP/1.1" 200 14
+2020-07-10 15:00:26 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2020-07-10 15:00:31 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://127.0.0.1:62218/session/6e43fd46911f74b4d2354cc99e6bfa8c/element {"using": "xpath", "value": "//frame[@name=\"header\"]"}
+2020-07-10 15:00:31 [urllib3.connectionpool] DEBUG: http://127.0.0.1:62218 "POST /session/6e43fd46911f74b4d2354cc99e6bfa8c/element HTTP/1.1" 500 1819
+2020-07-10 15:00:31 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2020-07-10 15:00:31 [selenium.webdriver.remote.remote_connection] DEBUG: GET http://127.0.0.1:62218/session/6e43fd46911f74b4d2354cc99e6bfa8c/alert/text {}
+2020-07-10 15:00:32 [urllib3.connectionpool] DEBUG: http://127.0.0.1:62218 "GET /session/6e43fd46911f74b4d2354cc99e6bfa8c/alert/text HTTP/1.1" 404 1839
+2020-07-10 15:00:32 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2020-07-10 15:00:32 [scrapy.core.engine] ERROR: Error while obtaining start requests
+Traceback (most recent call last):
+  File "/Users/arip-somatech/Documents/learn/python/bca_crawl/bca_crawl/spiders/bcacrawl.py", line 65, in login
+    self.__driver.switch_to.frame(self.__driver.find_element_by_xpath("//frame[@name=\"header\"]"))
+  File "/usr/local/lib/python3.8/site-packages/selenium/webdriver/remote/webdriver.py", line 394, in find_element_by_xpath
+    return self.find_element(by=By.XPATH, value=xpath)
+  File "/usr/local/lib/python3.8/site-packages/selenium/webdriver/remote/webdriver.py", line 976, in find_element
+    return self.execute(Command.FIND_ELEMENT, {
+  File "/usr/local/lib/python3.8/site-packages/selenium/webdriver/remote/webdriver.py", line 321, in execute
+    self.error_handler.check_response(response)
+  File "/usr/local/lib/python3.8/site-packages/selenium/webdriver/remote/errorhandler.py", line 241, in check_response
+    raise exception_class(message, screen, stacktrace, alert_text)
+selenium.common.exceptions.UnexpectedAlertPresentException: Alert Text: Anda dapat melakukan login kembali setelah 5 menit / You can re-login after 5 minutes.
+Message: unexpected alert open: {Alert text : Anda dapat melakukan login kembali setelah 5 menit / You can re-login after 5 minutes.}
+  (Session info: chrome=83.0.4103.116)
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/site-packages/scrapy/core/engine.py", line 129, in _next_request
+    request = next(slot.start_requests)
+  File "/Users/arip-somatech/Documents/learn/python/bca_crawl/bca_crawl/spiders/bcacrawl.py", line 23, in start_requests
+    self.login()
+  File "/Users/arip-somatech/Documents/learn/python/bca_crawl/bca_crawl/spiders/bcacrawl.py", line 68, in login
+    alert = self.__driver.switch_to.alert
+  File "/usr/local/lib/python3.8/site-packages/selenium/webdriver/remote/switch_to.py", line 55, in alert
+    alert.text
+  File "/usr/local/lib/python3.8/site-packages/selenium/webdriver/common/alert.py", line 67, in text
+    return self.driver.execute(Command.W3C_GET_ALERT_TEXT)["value"]
+  File "/usr/local/lib/python3.8/site-packages/selenium/webdriver/remote/webdriver.py", line 321, in execute
+    self.error_handler.check_response(response)
+  File "/usr/local/lib/python3.8/site-packages/selenium/webdriver/remote/errorhandler.py", line 242, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.NoAlertPresentException: Message: no such alert
+  (Session info: chrome=83.0.4103.116)
+
+2020-07-10 15:00:32 [scrapy.core.engine] INFO: Closing spider (finished)
+2020-07-10 15:00:32 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://127.0.0.1:62218/session/6e43fd46911f74b4d2354cc99e6bfa8c/element {"using": "xpath", "value": "//frame[@name=\"header\"]"}
+2020-07-10 15:00:32 [urllib3.connectionpool] DEBUG: http://127.0.0.1:62218 "POST /session/6e43fd46911f74b4d2354cc99e6bfa8c/element HTTP/1.1" 404 1938
+2020-07-10 15:00:32 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2020-07-10 15:00:32 [bca-crawl] INFO: Error 
+2020-07-10 15:00:32 [selenium.webdriver.remote.remote_connection] DEBUG: DELETE http://127.0.0.1:62218/session/6e43fd46911f74b4d2354cc99e6bfa8c/window {}
+2020-07-10 15:00:32 [urllib3.connectionpool] DEBUG: http://127.0.0.1:62218 "DELETE /session/6e43fd46911f74b4d2354cc99e6bfa8c/window HTTP/1.1" 200 12
+2020-07-10 15:00:32 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2020-07-10 15:00:32 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
+{'elapsed_time_seconds': 22.760563,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2020, 7, 10, 8, 0, 32, 129506),
+ 'log_count/DEBUG': 37,
+ 'log_count/ERROR': 1,
+ 'log_count/INFO': 11,
+ 'memusage/max': 100151296,
+ 'memusage/startup': 100151296,
+ 'start_time': datetime.datetime(2020, 7, 10, 8, 0, 9, 368943)}
+2020-07-10 15:00:32 [scrapy.core.engine] INFO: Spider closed (finished)
