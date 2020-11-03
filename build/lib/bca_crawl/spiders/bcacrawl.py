@@ -124,39 +124,37 @@ class BcaCrawl (Spider):
         isexist = os.path.isfile(self.file)
         if len(self.__mutasiData) > 0 :
             year = datetime.now().strftime('%Y')
+            self.logger.info("using new method")
             for transaction in self.__mutasiData:
-                if transaction[0] == "PEND" :
-                    keterangan = " ".join([txt + "/" + year for txt in str(transaction[1]).split()])
-                    tanggal = re.search("(\d{1,4}([.\-/])\d{1,2}([.\-/])\d{1,4})", str(keterangan))
-                    if bool(tanggal):
-                        self.logger.info("goes to here to check if in keterangan exist date")
-                        tanggal = tanggal.group(1)
-                        try :
-                            if datetime.strptime(str(tanggal), "%m/%d/%Y") == datetime.strptime(datetime.now().strftime("%m/%d/%Y"), "%m/%d/%Y") :
-                                self.data["tanggal_mutasi"].append(transaction[0])
-                                self.data["keterangan"].append(transaction[1])
-                                self.data["amount"].append(transaction[3])
-                                self.data["dbkr"].append(transaction[4])
-                                self.data["saldo"].append(transaction[5])
-                        except Exception as e :
-                            self.data["tanggal_mutasi"].append(transaction[0])
-                            self.data["keterangan"].append(transaction[1])
-                            self.data["amount"].append(transaction[3])
-                            self.data["dbkr"].append(transaction[4])
-                            self.data["saldo"].append(transaction[5])
-                    elif not bool(tanggal):
-                        self.data["tanggal_mutasi"].append(transaction[0])
-                        self.data["keterangan"].append(transaction[1])
-                        self.data["amount"].append(transaction[3])
-                        self.data["dbkr"].append(transaction[4])
-                        self.data["saldo"].append(transaction[5])
-
-                elif datetime.strptime(transaction[0]+'/'+year, "%d/%m/%Y") == datetime.strptime(datetime.now().strftime("%d/%m/%Y"), "%d/%m/%Y") :
+                keterangan = str(transaction[1]).split()
+                tanggal_mts = ''
+                for ktrng in keterangan :
+                    if '/' in ktrng :
+                        ktrng_list = ktrng.split('/')
+                        if len(ktrng_list[0]) == 2 and len(ktrng_list[1]) == 2:
+                            tanggal = ktrng_list[0] + '/' + ktrng_list[1] + '/' + year
+                            try :
+                                if datetime.strptime(str(tanggal), "%m/%d/%Y") == datetime.strptime(datetime.now().strftime("%m/%d/%Y"), "%m/%d/%Y") :
+                                    tanggal_mts = transaction[0]
+                                    break
+                            except:
+                                self.logger.info("goes wrong unable to convert : " + tanggal)
+                        if len(ktrng_list[0]) == 4:
+                            tanggal = ktrng_list[0] + year
+                            try :
+                                if datetime.strptime(str(tanggal), "%d%m%Y") == datetime.strptime(datetime.now().strftime("%d%m%Y"), "%d%m%Y") :
+                                    tanggal_mts = transaction[0]
+                                    break
+                            except:
+                                self.logger.info("goes wrong unable to convert : " + tanggal)
+                                
+                if len(tanggal_mts) > 0 :
                     self.data["tanggal_mutasi"].append(transaction[0])
                     self.data["keterangan"].append(transaction[1])
                     self.data["amount"].append(transaction[3])
                     self.data["dbkr"].append(transaction[4])
                     self.data["saldo"].append(transaction[5])
+                
         
         if isexist :
             try :
